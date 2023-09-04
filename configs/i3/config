@@ -1,0 +1,297 @@
+set $base00 #272822
+set $base01 #383830
+set $base02 #49483e
+set $base03 #75715e
+set $base04 #a59f85
+set $base05 #f8f8f2
+set $base06 #f5f4f1
+set $base07 #f9f8f5
+set $base08 #f92672
+set $base09 #fd971f
+set $base0A #f4bf75
+set $base0B #a6e22e
+set $base0C #a1efe4
+set $base0D #66d9ef
+set $base0E #ae81ff
+set $base0F #cc6633
+
+
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
+client.focused_inactive #453a3a #453a3a #453a3a #453a3a #453a3a
+client.unfocused        #453a3a #453a3a #453a3a #453a3a #453a3a
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+# Logo key. Use Mod1 for Alt.
+set $mod        Mod4
+
+set $term       kitty
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Screen
+set $laptop_screen 'eDP-1'
+
+
+# Font
+font pango:DejaVuSansMono Nerd Font Mono 8
+
+# Gaps
+hide_edge_borders smart
+gaps inner 10
+gaps outer 0
+# gaps horizontal -15
+# gaps vertical -15
+
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+set $borderwidth 1
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+
+# Associate workspace to monitor
+workspace $ws1 output eDP-1-1
+workspace $ws2 output DP-2
+workspace $ws3 output HDMI-0
+workspace $ws4 output HDMI-0
+
+
+# Always open some programs on specified workspace
+assign [class="^firefox"]               $ws3
+assign [title="^Visual Studio Code"]    $ws2
+assign [class=".*Teams.*"]              $ws4
+assign [class="Slack"]                  $ws4
+
+# Open Spotify 
+bindsym $mod+n exec firefox -new-window "https://open.spotify.com/" 
+assign [title="Spotify - Web Player - Mozilla Firefox"] $ws10
+for_window [title=".*Spotify.*"] move container to workspace number $ws10
+
+for_window [class="^.*"] border pixel $borderwidth
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Thus"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+for_window [class="zoom"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+
+
+
+# dropdown terminal
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] resize set 800 800
+for_window [title="dropdown"] move position center
+for_window [title="dropdown"] move scratchpad
+bindsym $mod+s exec ~/.script/ddscript.sh
+
+
+
+
+# {{{ Keybinding
+## {{{ Basics
+    # Start Terminal
+    bindsym $mod+Return         exec $term
+    bindsym $mod+Shift+Return   exec $term -e tmux new-session -A -s BASE
+
+    # Kill Focused Window
+    bindsym $mod+Shift+q kill
+
+    # Reload Config file
+    bindsym $mod+Shift+c reload
+
+    # Restart i3
+    bindsym $mod+Shift+r restart
+
+    # Log Out
+    bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+    # Use Mouse+$mod to drag floating windows to their wanted position
+    floating_modifier $mod
+
+    # Start Rofi
+    bindsym $mod+d exec --no-startup-id rofi -show run
+## }}}
+
+## {{{ Moving around:
+    # Change Focus
+    bindsym $mod+$left            focus left
+    bindsym $mod+$down            focus down
+    bindsym $mod+$up              focus up
+    bindsym $mod+$right           focus right
+
+    # alternatively, you can use the cursor keys:
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move Focused Window
+    bindsym $mod+Shift+$left      move left 40px
+    bindsym $mod+Shift+$down      move down 40px
+    bindsym $mod+Shift+$up        move up 40px
+    bindsym $mod+Shift+$right     move right 40px
+
+    # alternatively, you can use the cursor keys:
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    # Resize
+    bindsym $mod+y resize shrink width 10 px or 10 ppt
+    bindsym $mod+u resize grow height 10 px or 10 ppt
+    bindsym $mod+i resize shrink height 10 px or 10 ppt
+    bindsym $mod+o resize grow width 10 px or 10 ppt
+
+    bindsym $mod+Shift+Tab workspace back_and_forth
+## }}}
+
+## {{{ Workspaces:
+    # switch to workspace
+    bindsym $mod+1 workspace number $ws1
+    bindsym $mod+2 workspace number $ws2
+    bindsym $mod+3 workspace number $ws3
+    bindsym $mod+4 workspace number $ws4
+    bindsym $mod+5 workspace number $ws5
+    bindsym $mod+6 workspace number $ws6
+    bindsym $mod+7 workspace number $ws7
+    bindsym $mod+8 workspace number $ws8
+    bindsym $mod+9 workspace number $ws9
+    bindsym $mod+0 workspace number $ws10
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number $ws1
+    bindsym $mod+Shift+2 move container to workspace number $ws2
+    bindsym $mod+Shift+3 move container to workspace number $ws3
+    bindsym $mod+Shift+4 move container to workspace number $ws4
+    bindsym $mod+Shift+5 move container to workspace number $ws5
+    bindsym $mod+Shift+6 move container to workspace number $ws6
+    bindsym $mod+Shift+7 move container to workspace number $ws7
+    bindsym $mod+Shift+8 move container to workspace number $ws8
+    bindsym $mod+Shift+9 move container to workspace number $ws9
+    bindsym $mod+Shift+0 move container to workspace number $ws10
+## }}}
+
+## {{{ Layout stuff:
+    # Toggle split orientation
+    bindsym $mod+v split toggle
+
+    # Fullscreen
+    bindsym $mod+f fullscreen toggle
+
+    # Container layout: tabbed/ split
+    bindsym $mod+Shift+t        layout toggle split
+    bindsym $mod+t              layout tabbed
+
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # change focus between tiling / floating windows
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+
+    # focus the child container
+    #bindsym $mod+d focus child
+
+
+    # switch to workspace with urgent window automatically
+    for_window [urgent=latest] focus
+
+## }}}
+
+## {{{ Scratchpad:
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+## }}}
+
+## {{{ MediaKey
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+    bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+    bindsym XF86AudioPlay exec playerctl play
+    bindsym XF86AudioPause exec playerctl pause
+    bindsym XF86AudioNext exec playerctl next
+    #bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -s set +5%
+    #bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -s set 5%-
+
+## }}}
+## {{{ Lock screen
+    # Lock screen with i3lock
+    bindsym $mod+Shift+x exec i3lock-fancy
+
+    # Lock laptop after 10 minutes of inactivity
+    exec xautolock -time 10 -locker "i3lock -i ~/.config/wallpapers/Valley.png"
+
+## }}}
+# }}}
+
+bindsym $mod+Print exec gnome-screenshot -i
+bindsym $mod+m exec nautilus -w
+#bindsym $mod+g bar mode toggle
+
+
+
+#exec --no-startup-id polybar example
+exec_always "setxkbmap -layout us,it"
+exec_always "setxkbmap -option 'grp:alt_space_toggle'"
+exec xinput set-prop "ELAN067A:00 04F3:3197 Touchpad" "libinput Tapping Enabled" 1 
+
+exec_always --no-startup-id picom --experimental-backend --config ~/.config/picom/picom.conf
+exec_always --no-startup-id feh ~/.config/wallpapers/archpc_gruvbox.png --bg-fill
+
+exec --no-startup-id nm-applet
+exec --no-startup-id $term -T dropdown -e tmux new-session -s dropdown
+
+
+#exec_always --no-startup-id clipit
+
+
+exec_always --no-startup-id ~/.screenlayout/monitors.sh
+
+

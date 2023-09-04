@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/marcop/.config/wallpapers/archpc_gruvbox.png' 
