@@ -147,7 +147,7 @@ bindsym $mod+s exec ~/.script/ddscript.sh
     floating_modifier $mod
 
     # Start Rofi
-    bindsym $mod+d exec --no-startup-id rofi -show run
+    bindsym $mod+d exec --no-startup-id rofi -show run -theme gruvbox-dark.rasi
 ## }}}
 
 ## {{{ Moving around:
@@ -266,7 +266,7 @@ bindsym $mod+s exec ~/.script/ddscript.sh
     bindsym $mod+Shift+x exec i3lock-fancy
 
     # Lock laptop after 10 minutes of inactivity
-    exec xautolock -time 10 -locker "i3lock -i ~/.config/wallpapers/Valley.png"
+    exec --no-startup-id xss-lock -- i3lock -i ~/.config/wallpapers/Valley.png
 
 ## }}}
 # }}}
@@ -276,22 +276,14 @@ bindsym $mod+m exec nautilus -w
 #bindsym $mod+g bar mode toggle
 
 
-
-#exec --no-startup-id polybar example
+exec --no-startup-id $term -T dropdown -e tmux new-session -s dropdown
+exec --no-startup-id picom --experimental-backend --config ~/.config/picom/picom.conf
+exec --no-startup-id feh ~/.config/wallpapers/archpc_gruvbox.png --bg-fill
+exec_always --no-startup-id ~/.screenlayout/monitors.sh
 exec_always "setxkbmap -layout us,it"
 exec_always "setxkbmap -option 'grp:alt_space_toggle'"
 exec xinput set-prop "ELAN067A:00 04F3:3197 Touchpad" "libinput Tapping Enabled" 1 
 
-exec_always --no-startup-id picom --experimental-backend --config ~/.config/picom/picom.conf
-exec_always --no-startup-id feh ~/.config/wallpapers/archpc_gruvbox.png --bg-fill
-
-exec --no-startup-id nm-applet
-exec --no-startup-id $term -T dropdown -e tmux new-session -s dropdown
-
-
-#exec_always --no-startup-id clipit
-
-
-exec_always --no-startup-id ~/.screenlayout/monitors.sh
+exec_always --no-startup-id ~/.script/env_path.sh
 
 

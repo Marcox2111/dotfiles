@@ -8,4 +8,5 @@
 . /etc/X11/Xsession
 
 xrdb ~/.Xresources
+source ~/.zshrc
 exec i3

@@ -4,7 +4,8 @@
 
 # Ensure custom paths are added to $PATH
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
-export PATH="~/Documents/NanoProject/STM32MPU/STM32CubeProgrammer/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/Documents/NanoProject/STM32MPU/STM32CubeProgrammer/bin:$PATH"
 
 # Oh-my-zsh configuration path
 export ZSH="$HOME/.oh-my-zsh"

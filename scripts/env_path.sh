@@ -1,0 +1,1 @@
+echo $PATH > ~/path_dump.txt

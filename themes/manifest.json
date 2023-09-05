@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "262726",
+  "theme": {
+    "images": {},
+    "properties": {},
+    "colors": {
+      "toolbar": "rgb(38, 39, 38)",
+      "toolbar_text": "rgb(241, 232, 217)",
+      "frame": "rgb(38, 39, 38)",
+      "tab_background_text": "rgb(241, 232, 217)",
+      "toolbar_field": "rgb(38, 39, 38)",
+      "toolbar_field_text": "rgb(241, 232, 217)",
+      "tab_line": "rgb(241, 232, 217)",
+      "popup": "rgb(38, 39, 38)",
+      "popup_text": "rgb(241, 232, 217)",
+      "popup_border": "rgba(38, 39, 38, 0)",
+      "sidebar_border": "rgba(38, 39, 38, 0)",
+      "tab_background_separator": "rgba(38, 39, 38, 0)",
+      "toolbar_bottom_separator": "rgba(38, 39, 38, 0)",
+      "toolbar_field_border_focus": "rgba(38, 39, 38, 0)",
+      "toolbar_field_border": "rgba(38, 39, 38, 0)",
+      "toolbar_field_separator": "rgba(38, 39, 38, 0)",
+      "toolbar_top_separator": "rgba(38, 39, 38, 0)",
+      "toolbar_vertical_separator": "rgb(241, 232, 217)",
+      "tab_loading": "rgb(241, 232, 217)"
+    }
+  }
+}
