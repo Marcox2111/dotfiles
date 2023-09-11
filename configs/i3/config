@@ -278,7 +278,7 @@ bindsym $mod+m exec nautilus -w
 
 exec --no-startup-id $term -T dropdown -e tmux new-session -s dropdown
 exec --no-startup-id picom --experimental-backend --config ~/.config/picom/picom.conf
-exec --no-startup-id feh ~/.config/wallpapers/archpc_gruvbox.png --bg-fill
+exec_always --no-startup-id feh ~/.config/wallpapers/archpc_gruvbox.png --bg-fill
 exec_always --no-startup-id ~/.screenlayout/monitors.sh
 exec_always "setxkbmap -layout us,it"
 exec_always "setxkbmap -option 'grp:alt_space_toggle'"

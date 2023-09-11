@@ -34,7 +34,7 @@
     # Draw a line between multiple notifications
     separator_height = 2
 
-    separator_color = "#272527"
+    separator_color = "#D8DAD8"
 
     # Set notification padding
     padding = 16
@@ -167,37 +167,37 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#E8D6B9ff"
-    highlight = "#6FA6E7"
-    frame_color = "#272F57"
-    foreground = "#262726"
+    background = "#172946ff"
+    highlight = "#905918"
+    frame_color = "#D8D0A8"
+    foreground = "#D9D8D9"
     timeout = 8
 
 [urgency_normal]
-    background = "#E8D6B9ff"
-    highlight = "#5CA1FF"
-    frame_color = "#272F57"
-    foreground = "#262726"
+    background = "#172946ff"
+    highlight = "#A35E00"
+    frame_color = "#D8D0A8"
+    foreground = "#D9D8D9"
     timeout = 8
 
 [urgency_critical]
-    background = "#5CA1FFff"
-    highlight = "#FE6C5A"
-    foreground = "#1C2138"
-    frame_color = "#52426E"
+    background = "#A35E00ff"
+    highlight = "#0193A5"
+    foreground = "#E3DEC7"
+    frame_color = "#ADBD91"
     timeout = 0
     icon = battery-ac-adapter
 
 [backlight]
     appname = "Backlight"
-    highlight = "#FC7B80"
+    highlight = "#03847F"
 
 [music]
     appname = "Music"
 
 [volume]
     summary = "Volume*"
-    highlight = "#CB8CF4"
+    highlight = "#34730B"
 
 [battery]
     appname = "Power Warning"

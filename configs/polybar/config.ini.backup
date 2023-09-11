@@ -17,11 +17,11 @@
 ;==========================================================
 
 [colors]
-background = #262726
-background-alt = #E8D6B9 
-foreground = #E8D6B9
-foreground-alt = #262726
-red = #362726
+background = #D9D8D9
+background-alt = #172946 
+foreground = #172946
+foreground-alt = #D9D8D9
+red = #C9D8D9
 
 
 
@@ -31,8 +31,6 @@ width = 100%
 height = 30pt
 radius = 0
 
-monitor = DP-2
-
 ; dpi = 100
 
 background = ${colors.background}
@@ -40,7 +38,7 @@ foreground = ${colors.foreground}
 
 ; line-size = 3pt
 ; border-size = 0
-; border-color = #00000000
+; border-color = #FFFFFF00
 padding-left = 0
 padding-right = 0
 module-margin = 2
@@ -282,7 +280,7 @@ poll-interval = 5
 type = internal/network
 interval = 1
 ;format-disconnected = <label-disconnected>
-;label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+;label-disconnected = %{F#0F398B}%ifname%%{F#8F877F} disconnected
 ;label-disconnected =
 
 [module/wlan]
