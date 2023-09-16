@@ -1,0 +1,21 @@
+configuration { 
+    modi: "window,run,drun";
+    sidebar-mode: true;
+    show-icons: false;
+    dpi: 110;   
+    /*  font: "mono 12";*/
+    /*  location: 0;*/
+    /*  yoffset: 0;*/
+    /*  xoffset: 0;*/
+    /*  fixed-num-lines: true;*/
+    /*  ml-row-down: "ScrollDown";*/                                                                                        
+    /*  me-select-entry: "MousePrimary";*/                                                                                  
+    /*  me-accept-entry: "MouseDPrimary";*/                                                                                 
+    /*  me-accept-custom: "Control+MouseDPrimary";*/ 
+}
+
+@theme "theme"
+
+
+
+

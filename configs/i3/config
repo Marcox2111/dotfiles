@@ -147,7 +147,7 @@ bindsym $mod+s exec ~/.script/ddscript.sh
     floating_modifier $mod
 
     # Start Rofi
-    bindsym $mod+d exec --no-startup-id rofi -show run -theme gruvbox-dark.rasi
+    bindsym $mod+d exec --no-startup-id rofi -show run
 ## }}}
 
 ## {{{ Moving around:
@@ -263,10 +263,9 @@ bindsym $mod+s exec ~/.script/ddscript.sh
 ## }}}
 ## {{{ Lock screen
     # Lock screen with i3lock
-    bindsym $mod+Shift+x exec i3lock-fancy
-
+    bindsym $mod+Shift+x exec i3lock -i ~/.config/wallpapers/archpc_gruvbox.png -t
     # Lock laptop after 10 minutes of inactivity
-    exec --no-startup-id xss-lock -- i3lock -i ~/.config/wallpapers/Valley.png
+    exec --no-startup-id xss-lock -- i3lock -n -i ~/.config/wallpapers/archpc_gruvbox.png
 
 ## }}}
 # }}}
@@ -274,7 +273,6 @@ bindsym $mod+s exec ~/.script/ddscript.sh
 bindsym $mod+Print exec gnome-screenshot -i
 bindsym $mod+m exec nautilus -w
 #bindsym $mod+g bar mode toggle
-
 
 exec --no-startup-id $term -T dropdown -e tmux new-session -s dropdown
 exec --no-startup-id picom --experimental-backend --config ~/.config/picom/picom.conf

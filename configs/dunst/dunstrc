@@ -167,14 +167,14 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#E8D6B9ff"
+    background = "#EBDBB2ff"
     highlight = "#6FA6E7"
     frame_color = "#272F57"
     foreground = "#262726"
     timeout = 8
 
 [urgency_normal]
-    background = "#E8D6B9ff"
+    background = "#EBDBB2ff"
     highlight = "#5CA1FF"
     frame_color = "#272F57"
     foreground = "#262726"

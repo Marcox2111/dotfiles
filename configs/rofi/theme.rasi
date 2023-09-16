@@ -1,0 +1,123 @@
+* {
+	text-color:        #ebdbb2;
+	background-color:  rgba(205, 206, 205, 0.0);
+	
+	fc-color: #ebdbb2;
+	bg-color: #262726;
+	fc-color-trans: #303130;
+	bg-color-trans: #262726;
+
+	font: "JetBrainsMono Nerd Font 11";
+}
+
+/* ================================================= */
+/* Main container                                    */
+/* ================================================= */
+#window {
+	fullscreen:    true;
+	location:      center;
+	anchor:        center;
+	border:        0px 0px 0px 0px;
+	transparency:  "real";
+
+	orientation:  horizontal;
+	children:     [mainbox, dummy];
+    	spacing: 0;
+}
+
+/* First container */
+#mainbox {
+	expand:            false;
+	background-color:  @bg-color;
+	spacing:           1em;
+  	padding:           0px;
+  	border: 0px 0px 0px 0px;
+	border-color: #ebdbb2;
+}
+
+/* Dummy container */
+#dummy {
+	expand: true;
+  	background-color: rgba(0, 0, 0, 0.5);
+}
+/* ================================================= */
+
+/* ================================================= */
+/* Sidebar and its elements                          */
+/* ================================================= */
+#sidebar {
+	border:  0px 0px 0px 0px;
+}
+
+#button {
+	font:       "JetBrainsMono Nerd Font 11";
+	padding:    0.7em;
+}
+
+#button selected {
+	font:              "JetBrainsMono Nerd Font 11 11";
+	background-color:  @fc-color-trans;
+}
+/* ================================================= */
+
+/* ================================================= */
+/*  Input bar                                        */
+/* ================================================= */
+#inputbar {
+	padding:       1.4em 2em 0 2em;
+	spacing:		   0.2em;
+}
+
+#prompt {
+	font: "JetBrainsMono Nerd Font SemiBold 11";
+}
+
+#entry {
+	font: "JetBrainsMono Nerd Font 11";
+	width: 24em;
+}
+/* ================================================= */
+
+
+/* ================================================= */
+/* List view					     */
+/* ================================================= */
+#listview {
+	spacing: 0px;
+}
+
+#element {
+	font:     "JetBrainsMono Nerd Font 11";
+	padding:  0.7em 2em 0.7em 2em;
+}
+
+#element selected normal {
+	background-color: @fc-color-trans;
+}
+
+#element normal active {
+	background-color: @fc-color-trans;
+}
+
+#element normal urgent {
+	background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+	text-color: @focus-col;
+}
+
+#element alternate urgent {
+	background-color: OrangeRed;
+}
+
+#element selected active {
+	background-color:  @fc-color-trans;
+}
+
+#element selected urgent {
+	background-color:  DarkOrange;
+}
